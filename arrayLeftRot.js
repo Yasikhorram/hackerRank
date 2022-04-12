@@ -7,8 +7,7 @@
 function rotLeft(a, d) {
   for (var i = 0; i < d; i++) {
     let first = a.shift();
-    console.log("first", a[first]);
-    let last = a[a.length - 1];
+    a.push(first);
   }
   return a;
 }
