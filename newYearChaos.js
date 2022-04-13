@@ -15,7 +15,7 @@ function minimumBribes(q) {
     }
     for (var j = q[i] - 2; j < i; j++) {
       if (q[i] > q[j]) {
-        swap++;
+        swaps++;
       }
     }
   }
