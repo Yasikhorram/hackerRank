@@ -6,21 +6,22 @@
 */
 
 function minimumBribes(q) {
-  let swap = 0;
-  let sortedQ = q.sort((a, b) => a - b);
-  for (var i = q.length - 1; i >= 0; i--) {
-    console.log(q[i]);
-    console.log(qSorted[i]);
+  let swaps = 0;
+  let chaotic = false;
 
-    if (q[i] !== qSorted[i]) {
-      let index = q.indexOf(qSorted[i]);
-      let difference = i - index;
-      console.log("difference", difference);
-      swap += difference;
-      console.log("swap inside: ", swap);
+  for (var i = q.length - 1; i >= 0; i--) {
+    if (q[i] - i > 3) {
+      chaotic = true;
+    }
+    for (var j = q[i] - 2; j < i; j++) {
+      if (q[i] > q[j]) {
+        swap++;
+      }
     }
   }
-  if (swap > 2) {
+  if (chaotic) {
     console.log("Too chaotic");
+  } else {
+    console.log(swaps);
   }
 }
