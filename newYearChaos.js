@@ -7,7 +7,19 @@
 
 function minimumBribes(q) {
   let swap = 0;
-  for (var i = q.length - 1; i >= 0; i--) {}
+  let sortedQ = q.sort((a, b) => a - b);
+  for (var i = q.length - 1; i >= 0; i--) {
+    console.log(q[i]);
+    console.log(qSorted[i]);
+
+    if (q[i] !== qSorted[i]) {
+      let index = q.indexOf(qSorted[i]);
+      let difference = i - index;
+      console.log("difference", difference);
+      swap += difference;
+      console.log("swap inside: ", swap);
+    }
+  }
   if (swap > 2) {
     console.log("Too chaotic");
   }
