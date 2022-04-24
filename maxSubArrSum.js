@@ -8,6 +8,6 @@ function maxSubArrSum(arr, n) {
   if (n > arr.length) {
     return null;
   }
-  let maxSum = 0;
+  let maxSum = -Infinity;
   return maxSum;
 }
