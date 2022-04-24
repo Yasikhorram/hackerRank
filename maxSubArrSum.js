@@ -9,5 +9,15 @@ function maxSubArrSum(arr, n) {
     return null;
   }
   let maxSum = -Infinity;
+  let tempSum;
+  for (let i = 0; i < n; i++) {
+    maxSum += arr[i];
+  }
+  tempSum = maxSum;
+  for (let i = n; i < arr.length; i++) {
+    tempSum = tempSum - arr[i - n] + arr[i];
+    maxSum = Math.max(maxSum, tempSum);
+  }
+
   return maxSum;
 }
