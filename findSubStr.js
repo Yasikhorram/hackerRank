@@ -1,0 +1,1 @@
+function findSubStr(str, sub) {}
