@@ -1,25 +1,20 @@
 function selectionSort(arr) {
-  let noSwap = false;
   for (let j = 0; j < arr.length; j++) {
     let min = arr[j];
-    let idx = j;
-    console.log("arr[j]", arr[j]);
+    let lowestIdx = j;
     for (let i = j + 1; i < arr.length; i++) {
-      console.log("min before comparison", min);
-      console.log("arr[i]", arr[i]);
       if (arr[i] < min) {
         min = arr[i];
-        idx = i;
+        lowestIdx = i;
       }
     }
-    console.log("min after is", min);
-    console.log("---------");
+    if (j !== lowestIdx) {
+      let temp = arr[j];
+      arr[j] = min;
+      arr[lowestIdx] = temp;
 
-    let temp = arr[j];
-    arr[j] = min;
-    arr[idx] = temp;
   }
   return arr;
 }
 
-console.log(selectionSort([1, 4, 3, 76, 0]));
+console.log(selectionSort([0, 4, 1, 3, 76]));
