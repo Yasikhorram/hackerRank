@@ -6,10 +6,11 @@ In this kata you get the start number and the end number of a region and should 
 function dontGiveMeFive(start, end) {
   let arr = [];
   for (let i = start; i <= end; i++) {
-    if (i.toString().indexOf("5") > -1) {
+    if (i.toString().indexOf("5") === -1) {
       arr.push(i);
+      console.log(i);
     }
   }
   return arr.length;
 }
-console.log(dontGiveMeFive());
+console.log(dontGiveMeFive(4, 17));
