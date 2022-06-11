@@ -11,25 +11,16 @@ Output: 5
 */
 
 var maxProfit = function (prices) {
-  let maxDifference = 0;
-
-  for (let i = 0; i < prices.length; i++) {
-    console.log(prices[i]);
-    for (let j = i + 1; j < prices.length; j++) {
-      console.log("prices[j]: ", prices[j]);
-
-      if (prices[i] < prices[j]) {
-        let difference = prices[j] - prices[i];
-        if (maxDifference < difference) {
-          maxDifference = prices[j] - prices[i];
-          console.log("max difference:", maxDifference);
-          console.log("-------");
-        }
-      }
-    }
+  let result = 0;
+  let min = prices[0];
+  for (let i = 1; i < prices.length; i++) {
+    min = Math.min(prices[i], min);
+    console.log("min is", min);
+    result = Math.max(result, prices[i] - min);
+    console.log("result is", result);
+    console.log("-----");
   }
-
-  return maxDifference;
+  return result;
 };
 
 console.log(maxProfit([7, 1, 5, 3, 6, 4]));
