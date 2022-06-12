@@ -22,12 +22,20 @@ var romanToInt = function (s) {
   };
   let sum = 0;
 
-  let splitted = s.split("");
-  for (let char of splitted) {
-    sum += roman[char];
+  for (let i = 0; i < s.length; i++) {
+    if (roman[s[i]] < roman[s[i + 1]]) {
+      sum -= roman[s[i]];
+    } else {
+      sum += roman[s[i]];
+    }
   }
 
   return sum;
 };
 
-console.log(romanToInt("XII"));
+console.log(romanToInt("MCMXCIV"));
+//M 1000
+//CM  900
+// XC 90
+// IV 4
+//1994
