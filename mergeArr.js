@@ -18,7 +18,13 @@ class SingyLinkedList {
     this.length = 0;
   }
 }
+
+
 var mergeTwoLists = function (list1, list2) {
-  let output = [];
-  return output;
+  let head = new Node()
+
+  while(list1 && list2){
+    if(list1.val)
+  }
+
 };
