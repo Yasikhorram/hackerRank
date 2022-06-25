@@ -4,4 +4,8 @@ Input: head = [1,2,6,3,4,5,6], val = 6
 Output: [1,2,3,4,5]
 */
 
-var removeElements = function (head, val) {};
+var removeElements = function (head, val) {
+  let newNode = new listNode();
+  let current = newNode;
+  while (head) {}
+};
