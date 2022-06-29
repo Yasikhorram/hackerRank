@@ -10,6 +10,22 @@ Do not allocate extra space for another array. You must do this by modifying the
 Input: nums = [1,1,2]
 Output: 2, nums = [1,2,_]
 
+kh: Non-decreasing means that no element is less than the element before it
+
 */
 
-var removeDuplicates = function (nums) {};
+var removeDuplicates = function (nums) {
+  nums = nums.sort((a, b) => a - b);
+
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] === nums[i + 1]) {
+      console.log("nums[i] for splice ", nums[i], nums[i + 1]);
+
+      nums.splice(i, 1);
+
+      i--;
+    }
+  }
+};
+
+removeDuplicates([-1, 0, 0, 0, 0, 3, 3]);
